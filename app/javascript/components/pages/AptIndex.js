@@ -13,12 +13,12 @@ class AptIndex extends Component {
             {this.props.apts.map(apt => {
                 return(
       <             Card body key={apt.user_id}>
+                        <h3>🛖</h3>
                     <NavLink to={`/aptshow/${apt.user_id}`}>
-                    <CardTitle>
-                            <h4>{apt.street}</h4>
+                        <CardTitle>
+                                <h4>{apt.street}</h4>
                         </CardTitle>
                     </NavLink>
-                        <h3>🛖</h3>
                     </Card>
                 )
             })}
