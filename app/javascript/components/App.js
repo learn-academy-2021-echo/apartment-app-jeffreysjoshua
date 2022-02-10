@@ -1,4 +1,13 @@
 import React, { Component } from 'react'
+import {
+  BrowserRouter as  Router,
+  Route,
+  Switch
+} from 'react-router-dom'
+
+import AboutUs from './pages/AboutUs'
+import LearnMore from './pages/LearnMore'
+import Home from './pages/Home'
 
 class App extends Component {
   render() {
@@ -9,7 +18,9 @@ class App extends Component {
       sign_in_route,
       sign_out_route
     } = this.props
+    console.log("logged_in", logged_in)
     return(
+    
       <>
       <h1>Hola Mundo!</h1>
       <br /> 
