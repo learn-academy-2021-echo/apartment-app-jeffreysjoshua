@@ -1,24 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Depending on your application's configuration some manual setup may be required:
 
-Things you may want to cover:
+  1. Ensure you have defined default url options in your environments files. Here
+     is an example of default_url_options appropriate for a development environment
+     in config/environments/development.rb:
 
-* Ruby version
+       config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-* System dependencies
+     In production, :host should be set to the actual host of your application.
 
-* Configuration
+     * Required for all applications. *
 
-* Database creation
+  2. Ensure you have defined root_url to *something* in your config/routes.rb.
+     For example:
 
-* Database initialization
+       root to: "home#index"
+     
+     * Not required for API-only Applications *
 
-* How to run the test suite
+  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
+     For example:
 
-* Services (job queues, cache servers, search engines, etc.)
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
 
-* Deployment instructions
+     * Not required for API-only Applications *
 
-* ...
+  4. You can copy Devise views (for customization) to your app by running:
+
+       rails g devise:views
+       
+     * Not required *
+
